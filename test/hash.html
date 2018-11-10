@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hash测试</title>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+        div.router-wrap {
+            width: 100%;
+            height: 100%;
+            background: #efefef;
+        }
+        a {
+            display: inline-block;
+            padding: 10px;  
+            color: pink;
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .btn {
+            position: absolute;
+            top: 200px;
+            left: 10px;
+            padding: 10px;
+            color: pink;
+            font-size: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="router-wrap">
+        <a href="#/black">黑色</a><br>
+        <a href="#/green">绿色</a><br>
+        <a href="#/red">红色</a>
+    </div>
+    <button class="btn">切换到绿色</button>
+    <script src="/router.js"></script>
+    <script>
+        var wrap = document.querySelector('.router-wrap');
+        var btn = document.querySelector('.btn');
+
+        // 实例化Router
+        var router = new Router();
+
+        // 注册路由
+            
+        router.route('/', function () {
+            wrap.style.backgroundColor = '#efefef'
+        });
+
+        router.route('/black', function () {
+            wrap.style.backgroundColor = 'black';
+        });
+
+        router.route('/green', function () {
+            wrap.style.backgroundColor = 'green';
+        });
+
+        router.route('/red', function () {
+            wrap.style.backgroundColor = 'red';
+        });
+
+        btn.addEventListener('click', function() {
+            router.navigate('/green');
+        })
+    </script>
+</body>
+</html>
