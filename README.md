@@ -19,14 +19,6 @@ var router = new Router({
     root: '/history',
 	mode: 'history'
 });
-
-// 注册路由
-    
-
-
-btn.addEventListener('click', function() {
-    router.navigate('/green');
-})
 ```
 
 2. 注册路由
