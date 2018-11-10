@@ -17,7 +17,7 @@ src/router.js 是路由的核心文件。基本功能如下：
 ```
 var router = new Router({
     root: '/history',
-	mode: 'history'
+    mode: 'history'
 });
 ```
 
